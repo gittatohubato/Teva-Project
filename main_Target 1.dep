@@ -1,0 +1,28 @@
+Dependencies for Project 'main', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_TM4C123.s)(0x532C4792)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
+F (.\main.c)(0x5ED57A64)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (F:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (F:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (GPIO_Int.h)(0x5EC2A428)
+I (KPD_Int.h)(0x5ED3DE67)
+I (UART_Int.h)(0x5EC30549)
+I (F:/Keil/EE319Kware/inc/tm4c123gh6pm.h)(0x5388606A)
+F (.\GPIO_prog.c)(0x5ED57973)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\gpio_prog.o --omf_browse .\gpio_prog.crf --depend .\gpio_prog.d)
+I (F:/Keil/EE319Kware/inc/tm4c123gh6pm.h)(0x5388606A)
+I (GPIO_Int.h)(0x5EC2A428)
+I (F:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\KPD_prog.c)(0x5ED3DE6C)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\kpd_prog.o --omf_browse .\kpd_prog.crf --depend .\kpd_prog.d)
+I (KPD_Int.h)(0x5ED3DE67)
+I (GPIO_Int.h)(0x5EC2A428)
+I (F:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\LCD_prog.c)(0x5E5EBA41)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\lcd_prog.o --omf_browse .\lcd_prog.crf --depend .\lcd_prog.d)
+I (GPIO_Int.h)(0x5EC2A428)
+I (F:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (LCD_Int.h)(0x5E569632)
+F (.\UART_prog.c)(0x5EC4F0F0)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -I F:\Keil\ARM\RV31\INC-I F:\Keil\ARM\CMSIS\Include-I F:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\uart_prog.o --omf_browse .\uart_prog.crf --depend .\uart_prog.d)
+I (F:/Keil/EE319Kware/inc/tm4c123gh6pm.h)(0x5388606A)
+I (UART_Int.h)(0x5EC30549)
+I (F:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\KPD_Int.h)(0x5ED3DE67)()
+F (.\LCD_Int.h)(0x5E569632)()
+F (.\UART_Int.h)(0x5EC30549)()
