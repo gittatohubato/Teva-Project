@@ -21,7 +21,7 @@ void GPIO_init(u8 Port){		//doesn't contains clk enable
       GPIO_PORTA_PCTL_R = 0; // no alternative functions
       GPIO_PORTA_AMSEL_R = 0; // analog function disabled
       GPIO_PORTA_DEN_R= 0xFF; // digital enable
-			GPIO_PORTA_PDR_R = 255;
+			GPIO_PORTA_PUR_R = 255; //set all pins as pull up resistor
 			break;
 
 		case Port_B:
@@ -32,7 +32,7 @@ void GPIO_init(u8 Port){		//doesn't contains clk enable
       GPIO_PORTB_PCTL_R = 0; // no alternative functions
       GPIO_PORTB_AMSEL_R = 0; // analog function disabled
       GPIO_PORTB_DEN_R= 0xFF; // digital enable
-			GPIO_PORTB_PDR_R = 255;
+			GPIO_PORTB_PUR_R = 255;
 			break;
 
 		case Port_D:
@@ -43,7 +43,7 @@ void GPIO_init(u8 Port){		//doesn't contains clk enable
       GPIO_PORTD_PCTL_R = 0; // no alternative functions
       GPIO_PORTD_AMSEL_R = 0; // analog function disabled
       GPIO_PORTD_DEN_R= 0xFF; // digital enable	
-			GPIO_PORTD_PDR_R = 255;
+			GPIO_PORTD_PUR_R = 255;
 			break;
 		
 		case Port_E:
@@ -54,7 +54,7 @@ void GPIO_init(u8 Port){		//doesn't contains clk enable
       GPIO_PORTE_PCTL_R = 0; // no alternative functions
       GPIO_PORTE_AMSEL_R = 0; // analog function disabled
       GPIO_PORTE_DEN_R= 0xFF; // digital enable	
-			GPIO_PORTE_PDR_R = 255;
+			GPIO_PORTE_PUR_R = 255;
 			break;
 
 		case Port_F:
@@ -65,7 +65,7 @@ void GPIO_init(u8 Port){		//doesn't contains clk enable
       GPIO_PORTF_PCTL_R = 0; // no alternative functions
       GPIO_PORTF_AMSEL_R = 0; // analog function disabled
       GPIO_PORTF_DEN_R= 0xFF; // digital enable	
-			GPIO_PORTF_PDR_R = 255;
+			GPIO_PORTF_PUR_R = 255;
 			break;
 		}
 	

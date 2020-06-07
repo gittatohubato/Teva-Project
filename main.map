@@ -17,7 +17,7 @@ Section Cross References
     main.o(.text) refers to gpio_prog.o(.text) for GPIO_init
     main.o(.text) refers to uart_prog.o(.text) for UART_Init
     main.o(.text) refers to strcmpv7m.o(.text) for strcmp
-    main.o(.text) refers to kpd_prog.o(.text) for KPD_getPassword
+    main.o(.text) refers to kpd_prog.o(.text) for KPD_getNumber
     kpd_prog.o(.text) refers to gpio_prog.o(.text) for GPIO_setPinValue
     kpd_prog.o(.text) refers to kpd_prog.o(.data) for OUTPUT_Pin
     lcd_prog.o(.text) refers to gpio_prog.o(.text) for GPIO_setPinValue
@@ -237,17 +237,17 @@ Image Symbol Table
     .ARM.Collect$$rtexit$$00000004           0x00000300   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
     .text                                    0x00000308   Section      276  startup_tm4c123.o(.text)
     .text                                    0x0000041c   Section        0  main.o(.text)
-    .text                                    0x000005cc   Section        0  gpio_prog.o(.text)
-    .text                                    0x00000cbc   Section        0  kpd_prog.o(.text)
-    .text                                    0x00000db4   Section        0  uart_prog.o(.text)
-    .text                                    0x00001514   Section      128  strcmpv7m.o(.text)
-    .text                                    0x00001594   Section        0  heapauxi.o(.text)
-    .text                                    0x0000159a   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x000015e4   Section        0  exit.o(.text)
-    .text                                    0x000015f0   Section        8  libspace.o(.text)
-    .text                                    0x000015f8   Section        0  sys_exit.o(.text)
-    .text                                    0x00001604   Section        2  use_no_semi.o(.text)
-    .text                                    0x00001606   Section        0  indicate_semi.o(.text)
+    .text                                    0x000005b4   Section        0  gpio_prog.o(.text)
+    .text                                    0x00000ca4   Section        0  kpd_prog.o(.text)
+    .text                                    0x00000d9c   Section        0  uart_prog.o(.text)
+    .text                                    0x000014fc   Section      128  strcmpv7m.o(.text)
+    .text                                    0x0000157c   Section        0  heapauxi.o(.text)
+    .text                                    0x00001582   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000015cc   Section        0  exit.o(.text)
+    .text                                    0x000015d8   Section        8  libspace.o(.text)
+    .text                                    0x000015e0   Section        0  sys_exit.o(.text)
+    .text                                    0x000015ec   Section        2  use_no_semi.o(.text)
+    .text                                    0x000015ee   Section        0  indicate_semi.o(.text)
     .data                                    0x20000000   Section        7  kpd_prog.o(.data)
     .bss                                     0x20000008   Section       96  libspace.o(.bss)
     HEAP                                     0x20000068   Section        0  startup_tm4c123.o(HEAP)
@@ -459,42 +459,42 @@ Image Symbol Table
     __user_initial_stackheap                 0x000003fd   Thumb Code     0  startup_tm4c123.o(.text)
     SystemInit                               0x0000041d   Thumb Code     2  main.o(.text)
     init                                     0x0000041f   Thumb Code    32  main.o(.text)
-    main                                     0x0000043f   Thumb Code   390  main.o(.text)
-    GPIO_init                                0x000005cd   Thumb Code   238  gpio_prog.o(.text)
-    GPIO_setPinValue                         0x000006bb   Thumb Code   394  gpio_prog.o(.text)
-    GPIO_setPullUpResistor                   0x00000845   Thumb Code    80  gpio_prog.o(.text)
-    GPIO_setDataRegValue                     0x00000895   Thumb Code    68  gpio_prog.o(.text)
-    GPIO_getDataRegValue                     0x000008d9   Thumb Code    76  gpio_prog.o(.text)
-    GPIO_getPinValue                         0x00000925   Thumb Code   332  gpio_prog.o(.text)
-    GPIO_setPinDirection                     0x00000a71   Thumb Code   314  gpio_prog.o(.text)
-    GPIO_setPortDirection                    0x00000bab   Thumb Code    74  gpio_prog.o(.text)
-    GPIO_setPortValue                        0x00000bf5   Thumb Code    72  gpio_prog.o(.text)
-    GPIO_clkEnable                           0x00000c3d   Thumb Code    82  gpio_prog.o(.text)
-    KPD_ScanKeys                             0x00000cbd   Thumb Code   100  kpd_prog.o(.text)
-    KPD_getNumber                            0x00000d21   Thumb Code    88  kpd_prog.o(.text)
-    KPD_getPassword                          0x00000d79   Thumb Code    52  kpd_prog.o(.text)
-    UART_Init                                0x00000db5   Thumb Code  1100  uart_prog.o(.text)
-    UART_FIFOFullFlag                        0x00001201   Thumb Code   166  uart_prog.o(.text)
-    UART_FIFOEmptyFlag                       0x000012a7   Thumb Code   166  uart_prog.o(.text)
-    UART_SetUDR                              0x0000134d   Thumb Code   170  uart_prog.o(.text)
-    UART_SetUDRString                        0x000013f7   Thumb Code    26  uart_prog.o(.text)
-    UART_getUDR                              0x00001411   Thumb Code   184  uart_prog.o(.text)
-    UART_getUDRString                        0x000014c9   Thumb Code    42  uart_prog.o(.text)
-    strcmp                                   0x00001515   Thumb Code   128  strcmpv7m.o(.text)
-    __use_two_region_memory                  0x00001595   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x00001597   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x00001599   Thumb Code     2  heapauxi.o(.text)
-    __user_setup_stackheap                   0x0000159b   Thumb Code    74  sys_stackheap_outer.o(.text)
-    exit                                     0x000015e5   Thumb Code    12  exit.o(.text)
-    __user_libspace                          0x000015f1   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x000015f1   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x000015f1   Thumb Code     0  libspace.o(.text)
-    _sys_exit                                0x000015f9   Thumb Code     8  sys_exit.o(.text)
-    __I$use$semihosting                      0x00001605   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x00001605   Thumb Code     2  use_no_semi.o(.text)
-    __semihosting_library_function           0x00001607   Thumb Code     0  indicate_semi.o(.text)
-    Region$$Table$$Base                      0x00001608   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001628   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x0000043f   Thumb Code   364  main.o(.text)
+    GPIO_init                                0x000005b5   Thumb Code   238  gpio_prog.o(.text)
+    GPIO_setPinValue                         0x000006a3   Thumb Code   394  gpio_prog.o(.text)
+    GPIO_setPullUpResistor                   0x0000082d   Thumb Code    80  gpio_prog.o(.text)
+    GPIO_setDataRegValue                     0x0000087d   Thumb Code    68  gpio_prog.o(.text)
+    GPIO_getDataRegValue                     0x000008c1   Thumb Code    76  gpio_prog.o(.text)
+    GPIO_getPinValue                         0x0000090d   Thumb Code   332  gpio_prog.o(.text)
+    GPIO_setPinDirection                     0x00000a59   Thumb Code   314  gpio_prog.o(.text)
+    GPIO_setPortDirection                    0x00000b93   Thumb Code    74  gpio_prog.o(.text)
+    GPIO_setPortValue                        0x00000bdd   Thumb Code    72  gpio_prog.o(.text)
+    GPIO_clkEnable                           0x00000c25   Thumb Code    82  gpio_prog.o(.text)
+    KPD_ScanKeys                             0x00000ca5   Thumb Code   100  kpd_prog.o(.text)
+    KPD_getNumber                            0x00000d09   Thumb Code    88  kpd_prog.o(.text)
+    KPD_getPassword                          0x00000d61   Thumb Code    52  kpd_prog.o(.text)
+    UART_Init                                0x00000d9d   Thumb Code  1100  uart_prog.o(.text)
+    UART_FIFOFullFlag                        0x000011e9   Thumb Code   166  uart_prog.o(.text)
+    UART_FIFOEmptyFlag                       0x0000128f   Thumb Code   166  uart_prog.o(.text)
+    UART_SetUDR                              0x00001335   Thumb Code   170  uart_prog.o(.text)
+    UART_SetUDRString                        0x000013df   Thumb Code    26  uart_prog.o(.text)
+    UART_getUDR                              0x000013f9   Thumb Code   184  uart_prog.o(.text)
+    UART_getUDRString                        0x000014b1   Thumb Code    42  uart_prog.o(.text)
+    strcmp                                   0x000014fd   Thumb Code   128  strcmpv7m.o(.text)
+    __use_two_region_memory                  0x0000157d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000157f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00001581   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x00001583   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x000015cd   Thumb Code    12  exit.o(.text)
+    __user_libspace                          0x000015d9   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x000015d9   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x000015d9   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x000015e1   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x000015ed   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x000015ed   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x000015ef   Thumb Code     0  indicate_semi.o(.text)
+    Region$$Table$$Base                      0x000015f0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001610   Number         0  anon$$obj.o(Region$$Table)
     INPUT_Pin                                0x20000000   Data           4  kpd_prog.o(.data)
     OUTPUT_Pin                               0x20000004   Data           3  kpd_prog.o(.data)
     __libspace_start                         0x20000008   Data          96  libspace.o(.bss)
@@ -508,9 +508,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000309
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00001630, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001618, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00001628, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00001610, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -561,20 +561,20 @@ Memory Map of the image
     0x00000300   0x00000006   Code   RO          180    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x00000306   0x00000002   PAD
     0x00000308   0x00000114   Code   RO            4  * .text               startup_tm4c123.o
-    0x0000041c   0x000001b0   Code   RO           10    .text               main.o
-    0x000005cc   0x000006f0   Code   RO           41    .text               gpio_prog.o
-    0x00000cbc   0x000000f8   Code   RO           53    .text               kpd_prog.o
-    0x00000db4   0x00000760   Code   RO           83    .text               uart_prog.o
-    0x00001514   0x00000080   Code   RO           97    .text               c_w.l(strcmpv7m.o)
-    0x00001594   0x00000006   Code   RO           99    .text               c_w.l(heapauxi.o)
-    0x0000159a   0x0000004a   Code   RO          119    .text               c_w.l(sys_stackheap_outer.o)
-    0x000015e4   0x0000000c   Code   RO          121    .text               c_w.l(exit.o)
-    0x000015f0   0x00000008   Code   RO          129    .text               c_w.l(libspace.o)
-    0x000015f8   0x0000000c   Code   RO          188    .text               c_w.l(sys_exit.o)
-    0x00001604   0x00000002   Code   RO          199    .text               c_w.l(use_no_semi.o)
-    0x00001606   0x00000000   Code   RO          201    .text               c_w.l(indicate_semi.o)
-    0x00001606   0x00000002   PAD
-    0x00001608   0x00000020   Data   RO          253    Region$$Table       anon$$obj.o
+    0x0000041c   0x00000198   Code   RO           10    .text               main.o
+    0x000005b4   0x000006f0   Code   RO           41    .text               gpio_prog.o
+    0x00000ca4   0x000000f8   Code   RO           53    .text               kpd_prog.o
+    0x00000d9c   0x00000760   Code   RO           83    .text               uart_prog.o
+    0x000014fc   0x00000080   Code   RO           97    .text               c_w.l(strcmpv7m.o)
+    0x0000157c   0x00000006   Code   RO           99    .text               c_w.l(heapauxi.o)
+    0x00001582   0x0000004a   Code   RO          119    .text               c_w.l(sys_stackheap_outer.o)
+    0x000015cc   0x0000000c   Code   RO          121    .text               c_w.l(exit.o)
+    0x000015d8   0x00000008   Code   RO          129    .text               c_w.l(libspace.o)
+    0x000015e0   0x0000000c   Code   RO          188    .text               c_w.l(sys_exit.o)
+    0x000015ec   0x00000002   Code   RO          199    .text               c_w.l(use_no_semi.o)
+    0x000015ee   0x00000000   Code   RO          201    .text               c_w.l(indicate_semi.o)
+    0x000015ee   0x00000002   PAD
+    0x000015f0   0x00000020   Data   RO          253    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000008, Max: 0xffffffff, ABSOLUTE)
@@ -602,12 +602,12 @@ Image component sizes
 
       1776        198          0          0          0       3435   gpio_prog.o
        248          8          0          7          0       1800   kpd_prog.o
-       432          8          0          0          0       5883   main.o
+       408         10          0          0          0       5907   main.o
        276         24        620          0        512       5340   startup_tm4c123.o
       1888        154          0          0          0       2617   uart_prog.o
 
     ----------------------------------------------------------------------
-      4620        392        652          8        512      19075   Object Totals
+      4596        394        652          8        512      19099   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          1          0          0   (incl. Padding)
 
@@ -657,15 +657,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5020        408        652          8        608      19095   Grand Totals
-      5020        408        652          8        608      19095   ELF Image Totals
-      5020        408        652          8          0          0   ROM Totals
+      4996        410        652          8        608      19119   Grand Totals
+      4996        410        652          8        608      19119   ELF Image Totals
+      4996        410        652          8          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5672 (   5.54kB)
+    Total RO  Size (Code + RO Data)                 5648 (   5.52kB)
     Total RW  Size (RW Data + ZI Data)               616 (   0.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       5680 (   5.55kB)
+    Total ROM Size (Code + RO Data + RW Data)       5656 (   5.52kB)
 
 ==============================================================================
 

@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\main.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\main.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Jun 02 00:00:12 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sun Jun 07 07:58:50 2020
 <BR><P>
-<H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        116 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; KPD_getPassword &rArr; KPD_ScanKeys &rArr; GPIO_getPinValue
+__rt_entry_main &rArr; main &rArr; UART_getUDRString &rArr; UART_getUDR
 <P>
 <H3>
 Functions with no stack information
@@ -371,8 +371,8 @@ Global Symbols
 <P><STRONG><a name="[be]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[86]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; KPD_getPassword &rArr; KPD_ScanKeys &rArr; GPIO_getPinValue
+<BR><BR>[Stack]<UL><LI>Max Depth = 116 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; UART_getUDRString &rArr; UART_getUDR
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1232,13 +1232,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[87]"></a>main</STRONG> (Thumb, 390 bytes, Stack size 96 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = main &rArr; KPD_getPassword &rArr; KPD_ScanKeys &rArr; GPIO_getPinValue
+<P><STRONG><a name="[87]"></a>main</STRONG> (Thumb, 364 bytes, Stack size 96 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = main &rArr; UART_getUDRString &rArr; UART_getUDR
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_getUDRString
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_getUDR
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getPassword
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getNumber
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_setPullUpResistor
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_setPortDirection
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_setPinValue
@@ -1268,10 +1268,8 @@ Global Symbols
 
 <P><STRONG><a name="[c2]"></a>GPIO_getDataRegValue</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, gpio_prog.o(.text), UNUSED)
 
-<P><STRONG><a name="[98]"></a>GPIO_getPinValue</STRONG> (Thumb, 332 bytes, Stack size 8 bytes, gpio_prog.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_getPinValue
-</UL>
-<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_ScanKeys
+<P><STRONG><a name="[98]"></a>GPIO_getPinValue</STRONG> (Thumb, 332 bytes, Stack size 8 bytes, gpio_prog.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_ScanKeys
 </UL>
 
 <P><STRONG><a name="[c3]"></a>GPIO_setPinDirection</STRONG> (Thumb, 314 bytes, Stack size 8 bytes, gpio_prog.o(.text), UNUSED)
@@ -1285,26 +1283,21 @@ Global Symbols
 
 <P><STRONG><a name="[c5]"></a>GPIO_clkEnable</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, gpio_prog.o(.text), UNUSED)
 
-<P><STRONG><a name="[97]"></a>KPD_ScanKeys</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, kpd_prog.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = KPD_ScanKeys &rArr; GPIO_getPinValue
-</UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_getPinValue
+<P><STRONG><a name="[97]"></a>KPD_ScanKeys</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, kpd_prog.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_getPinValue
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_setPinValue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getPassword
+<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getPassword
 </UL>
 
-<P><STRONG><a name="[99]"></a>KPD_getNumber</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, kpd_prog.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getPassword
+<P><STRONG><a name="[95]"></a>KPD_getNumber</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, kpd_prog.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getPassword
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[95]"></a>KPD_getPassword</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, kpd_prog.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = KPD_getPassword &rArr; KPD_ScanKeys &rArr; GPIO_getPinValue
-</UL>
-<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getNumber
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_ScanKeys
-</UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[99]"></a>KPD_getPassword</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, kpd_prog.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_ScanKeys
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KPD_getNumber
 </UL>
 
 <P><STRONG><a name="[90]"></a>UART_Init</STRONG> (Thumb, 1100 bytes, Stack size 0 bytes, uart_prog.o(.text))
