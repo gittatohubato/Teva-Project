@@ -96,6 +96,12 @@ while(1){
         //getting the password from keypad
  	enteredPassword[KPDCount] = KPD_getNumber(KPD_Array); 
 	KPDCount++;		
+	//to lock the solenoid input * from keypad
+	if(enteredPassword[KPDCount-1]=='*'){
+		GPIO_setPinValue(room[i].RoomSolonoidPort ,room[i].RoomSolonoidPin , HIGH);//activate the solenoid (lock the door)
+		KPDCount=0;
+	}
+
 	if(strcmp(room[i].roomPassword , enteredPassword) == 0)
          //open the solonoid of this room (Open the door)
          GPIO_setPinValue(room[i].RoomSolonoidPort ,    room[i].RoomSolonoidPin , HIGH);

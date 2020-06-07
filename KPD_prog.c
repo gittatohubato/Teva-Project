@@ -25,29 +25,19 @@ void KPD_ScanKeys(u8 KPD_Array[no_Of_Coloumns][no_Of_Rows],u8 Port_KPD){
 }
 
 short int KPD_getNumber(u8 KPD_Array[no_Of_Coloumns][no_Of_Rows]){
+	if(KPD_Array[1][0]==0) return 2;
+	if(KPD_Array[2][0]==0) return 3; 
+	if(KPD_Array[0][1]==0) return 4;
+	if(KPD_Array[1][1]==0) return 5; 
+	if(KPD_Array[2][1]==0) return 6;
+	if(KPD_Array[0][2]==0) return 7; 
+	if(KPD_Array[1][2]==0) return 8;
+	if(KPD_Array[2][2]==0) return 9; 
+	if(KPD_Array[0][3]==0) return '*';
+	if(KPD_Array[1][3]==0) return 0;
+	return -1; 
+}          
 
-	if(KPD_Array[0][0]==0) return 1;
-
-	if(KPD_Array[0][1]==0) return 2;
-
-	if(KPD_Array[0][2]==0) return 3;
-
-	if(KPD_Array[1][0]==0) return 4;
-
-	if(KPD_Array[1][1]==0) return 5;
-
-	if(KPD_Array[1][2]==0) return 6;
-
-	if(KPD_Array[2][0]==0) return 7;
-
-	if(KPD_Array[2][1]==0) return 8;
-
-	if(KPD_Array[2][2]==0) return 9;
-	
-	if(KPD_Array[2][3]==0) return 0;
-	
-	return -1;
-}
 
 char* KPD_getPassword(u8 KPD_Array[no_Of_Coloumns][no_Of_Rows], u8 Port_KPD){
 
